@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: #f3f0e8;
+  --color-paper-raised: #faf8f2;
+  --color-ink: #1b1a17;
+  --color-ink-soft: #6a6660;
+  --color-ink-faint: #9a958c;
+  --color-line: #d8d3c6;
+  --color-line-strong: #1b1a17;
+  --color-accent: #b15b3c;
+  --color-side-a: #c9bba6;
+  --color-side-b: #8f8576;
+
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --background: #f3f0e8;
+  --foreground: #1b1a17;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Big editorial grotesque headings (Blog, Get the latest…) */
+.font-display {
+  font-family: var(--font-display), Helvetica, Arial, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+}
+
+/* Two-line clamp used on card titles */
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
